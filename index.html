@@ -1,116 +1,65 @@
-
+  <!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guía Interactiva: Phishing e Ingeniería Social</title>
+  <title>Guía Interactiva</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+      transition: background 0.3s, color 0.3s;
     }
-
-    h1 {
-      color: #283593;
-      margin-bottom: 30px;
+    .dark-mode {
+      background: #121212;
+      color: #fff;
     }
-
-    .button-container {
-      display: flex;
-      gap: 20px;
-    }
-
-    .boton {
-      background-color: #283593;
-      color: white;
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 1.2em;
-      transition: background-color 0.3s;
-    }
-
-    .boton:hover {
-      background-color: #1a237e;
-    }
-
-    section {
-      padding: 40px;
-      max-width: 800px;
-      text-align: justify;
-    }
-
-    .contenido {
-      display: none;
-    }
-
-    .activo {
-      display: block;
-    }
-
-    .volver {
-      margin-top: 30px;
+    .container {
       text-align: center;
+      padding: 50px;
+    }
+    button {
+      padding: 15px 30px;
+      margin: 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .dark-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
   </style>
 </head>
 <body>
-
-  <h1>Guía Interactiva</h1>
-  <div class="button-container">
-    <a href="#" class="boton" onclick="mostrarContenido('phishing')">Phishing</a>
-    <a href="#" class="boton" onclick="mostrarContenido('social')">Ingeniería Social</a>
+  <div class="dark-toggle">
+    <label>
+      <input type="checkbox" id="darkSwitch"> Modo Oscuro
+    </label>
+  </div>
+  <div class="container">
+    <h1>Guía Interactiva</h1>
+    <h2>Phishing y Técnicas de Ingeniería Social</h2>
+    <button onclick="location.href='tema1.html'">Tema 1: Phishing</button>
+    <button onclick="location.href='tema2.html'">Tema 2: Ingeniería Social</button>
   </div>
 
-  <section id="phishing" class="contenido">
-    <h2>¿Qué es el Phishing?</h2>
-    <p>
-      El phishing es una técnica de fraude digital utilizada para engañar a las personas
-      y hacer que revelen información personal, como contraseñas o datos bancarios.
-    </p>
-    <p>
-      Suele realizarse mediante correos electrónicos o páginas falsas que aparentan ser legítimas.
-    </p>
-    <div class="volver">
-      <a href="#" class="boton" onclick="volverInicio()">Volver al Inicio</a>
-    </div>
-  </section>
-
-  <section id="social" class="contenido">
-    <h2>Técnicas de Ingeniería Social</h2>
-    <p>
-      La ingeniería social es el arte de manipular a las personas para que revelen
-      información confidencial o realicen acciones que comprometan la seguridad.
-    </p>
-    <p>
-      Estas técnicas suelen aprovechar la confianza, el miedo o la urgencia para lograr su objetivo.
-    </p>
-    <div class="volver">
-      <a href="#" class="boton" onclick="volverInicio()">Volver al Inicio</a>
-    </div>
-  </section>
-
   <script>
-    function mostrarContenido(id) {
-      document.querySelector('.button-container').style.display = 'none';
-      document.querySelector('h1').style.display = 'none';
-      document.getElementById(id).classList.add('activo');
-    }
-
-    function volverInicio() {
-      document.querySelectorAll('.contenido').forEach(sec => sec.classList.remove('activo'));
-      document.querySelector('.button-container').style.display = 'flex';
-      document.querySelector('h1').style.display = 'block';
-    }
+    const switcher = document.getElementById('darkSwitch');
+    switcher.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode');
+    });
   </script>
 </body>
 </html>
