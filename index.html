@@ -3,8 +3,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Guía Interactiva: Phishing y Técnicas de Ingeniería Social</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía Interactiva: Phishing e Ingeniería Social</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,109 +12,106 @@
       margin: 0;
       padding: 0;
       color: #333;
-      animation: fadeIn 1s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
-    header {
-      <img src="https://cenpar.com.co/wp-content/uploads/2020/08/cenpar-rino-01-e1596776183784.png" alt="Logo Empresa" style="height: 60px; margin-right: 15px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Logotipo_de_la_Corporaci%C3%B3n_Universitaria_Minuto_de_Dios.svg/320px-Logotipo_de_la_Corporaci%C3%B3n_Universitaria_Minuto_de_Dios.svg.png" alt="Logo Universidad" style="height: 60px;">
+
+    h1 {
+      color: #283593;
+      margin-bottom: 30px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .boton {
       background-color: #283593;
       color: white;
-      padding: 20px;
-      text-align: center;
-      animation: slideDown 1s ease-in-out;
-    }
-    main {
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #1a237e;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: scale(1.02);
-    }
-    a {
-      color: #3949ab;
+      padding: 15px 30px;
       text-decoration: none;
-      font-weight: bold;
+      border-radius: 10px;
+      font-size: 1.2em;
+      transition: background-color 0.3s;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
+
+    .boton:hover {
       background-color: #1a237e;
-      color: white;
-      margin-top: 40px;
     }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+
+    section {
+      padding: 40px;
+      max-width: 800px;
+      text-align: justify;
     }
-    @keyframes slideDown {
-      from {transform: translateY(-100%);}
-      to {transform: translateY(0);}
+
+    .contenido {
+      display: none;
+    }
+
+    .activo {
+      display: block;
+    }
+
+    .volver {
+      margin-top: 30px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Guía Interactiva de Seguridad informática</h1>
-    <p>Phishing y Técnicas de Ingeniería Social</p>
-  </header>
-  <main>
-    <div class="card">
-      <h2>¿Qué es el Phishing?</h2>
-      <p>El phishing es una técnica de engaño utilizada por ciberdelincuentes para obtener información confidencial haciéndose pasar por una entidad confiable.</p>
+
+  <h1>Guía Interactiva</h1>
+  <div class="button-container">
+    <a href="#" class="boton" onclick="mostrarContenido('phishing')">Phishing</a>
+    <a href="#" class="boton" onclick="mostrarContenido('social')">Ingeniería Social</a>
+  </div>
+
+  <section id="phishing" class="contenido">
+    <h2>¿Qué es el Phishing?</h2>
+    <p>
+      El phishing es una técnica de fraude digital utilizada para engañar a las personas
+      y hacer que revelen información personal, como contraseñas o datos bancarios.
+    </p>
+    <p>
+      Suele realizarse mediante correos electrónicos o páginas falsas que aparentan ser legítimas.
+    </p>
+    <div class="volver">
+      <a href="#" class="boton" onclick="volverInicio()">Volver al Inicio</a>
     </div>
-    <div class="card">
-      <h2>Ejemplos de Phishing Comunes</h2>
-      <ul>
-        <li>Correos falsos del banco.</li>
-        <li>Enlaces sospechosos con premios falsos.</li>
-        <li>Mensajes urgentes para cambiar tu contraseña.</li>
-      </ul>
-      <p><a href="https://www.incibe.es/protege-tu-empresa/blog/10-ejemplos-de-phishing" target="_blank">Ver más ejemplos reales</a></p>
+  </section>
+
+  <section id="social" class="contenido">
+    <h2>Técnicas de Ingeniería Social</h2>
+    <p>
+      La ingeniería social es el arte de manipular a las personas para que revelen
+      información confidencial o realicen acciones que comprometan la seguridad.
+    </p>
+    <p>
+      Estas técnicas suelen aprovechar la confianza, el miedo o la urgencia para lograr su objetivo.
+    </p>
+    <div class="volver">
+      <a href="#" class="boton" onclick="volverInicio()">Volver al Inicio</a>
     </div>
-    <div class="card">
-      <h2>¿Qué es la Ingeniería Social?</h2>
-      <p>Es el arte de manipular personas para obtener datos confidenciales, aprovechando la confianza, el miedo o la urgencia.</p>
-    </div>
-    <div class="card">
-      <h2>Señales de Advertencia</h2>
-      <ul>
-        <li>Remitente desconocido o sospechoso.</li>
-        <li>Errores ortográficos.</li>
-        <li>Urgencia o amenazas.</li>
-        <li>Solicitudes de información personal.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>¿Cómo prevenir ser víctima?</h2>
-      <ul>
-        <li>No hagas clic en enlaces dudosos.</li>
-        <li>Verifica siempre el remitente.</li>
-        <li>Utiliza autenticación en dos pasos.</li>
-        <li>Capacítate regularmente.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>Video educativo</h2>
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/M8i3n0GfR5g" title="Video educativo sobre Phishing" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </main>
-  <footer>
-    <p>© 2025 Capacitación en Seguridad Informática | Prácticas Profesionales - Miguel Chavarro Campo - Ingeniería de Sistemas - UNIMINUTO</p>
-  </footer>
+  </section>
+
+  <script>
+    function mostrarContenido(id) {
+      document.querySelector('.button-container').style.display = 'none';
+      document.querySelector('h1').style.display = 'none';
+      document.getElementById(id).classList.add('activo');
+    }
+
+    function volverInicio() {
+      document.querySelectorAll('.contenido').forEach(sec => sec.classList.remove('activo'));
+      document.querySelector('.button-container').style.display = 'flex';
+      document.querySelector('h1').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
+
